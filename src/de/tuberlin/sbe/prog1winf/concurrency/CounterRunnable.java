@@ -24,8 +24,12 @@ public class CounterRunnable implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Thread(new CounterRunnable()).start();
-		new Thread(new CounterRunnable()).start();
+		CounterRunnable r = new CounterRunnable();
+		Thread t0 = new Thread(r);
+		t0.start();
+//		new Thread(new CounterRunnable()).start();
+		Thread t1 = new Thread(new CounterRunnable());
+		t1.start();
 	}
 
 }
