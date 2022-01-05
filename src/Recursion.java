@@ -2,8 +2,8 @@ public class Recursion {
 
     public static void main(String[] args) {
 //        down1(10);
-//        down2(10);
-        down3(10);
+        down2(10);
+//        down3(10);
     }
 
     // Code-Zitat Anfang.
@@ -17,8 +17,9 @@ public class Recursion {
     public static void down2(int n){
         if (n <= 0) return; // Rekursionsende
 
+        System.out.println("vor rek. Aufruf: " + n + " "); // Ausgabe _nach_ rek. Aufruf
         down2(n-1); // rekursiver Aufruf
-        System.out.print(n + " "); // Ausgabe _nach_ rek. Aufruf
+        System.out.println("nach rek. Aufruf: " + n + " "); // Ausgabe _nach_ rek. Aufruf
     }
     // Code-Zitat Ende.
     // Quelle: Buch "Java ist auch eine Insel", 15. Auflage, Rheinwerk; Seite 215 ff.

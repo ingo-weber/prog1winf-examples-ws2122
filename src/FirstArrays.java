@@ -2,6 +2,7 @@ public class FirstArrays {
 
     public static void main(String[] args) {
 
+        boolean seat0 = false;
         boolean seat1 = false;
         boolean seat2 = true;
         boolean seat3 = false;
@@ -20,9 +21,11 @@ public class FirstArrays {
         System.out.println("Seat 254: " + seats[254]);
         System.out.println("Seat 0: " + seats[0]);
 
+        System.out.println("Last seat: " + seats[seats.length-1]);
+
         //Address of seats array
         System.out.println("Seats: " + seats);
-//
+
 //        int[] randomNumbers = new int[20000];
         //...
     }

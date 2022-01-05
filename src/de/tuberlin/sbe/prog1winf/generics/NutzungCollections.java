@@ -33,9 +33,10 @@ public class NutzungCollections {
 ////			Object o = list.get(i);
 //			System.out.println(o);
 //			if (o instanceof Integer) {
-////				int curr = ((Integer) o).intValue();
-//				Integer three = 3;
-//				if (o == three) {
+//				int curr = ((Integer) o).intValue();
+////				Integer three = 3;
+////				if (o == three) {
+//				if (curr == 3) {
 //					// do something
 //					System.out.println("Found a 3 at pos: " + i);
 //				}
@@ -43,25 +44,29 @@ public class NutzungCollections {
 //			i++;
 //		}
 //
-//		for (Number n : list){
-//			if (n.doubleValue() > 5) {
-//				System.out.println("Greater than 5: " + n);
-//			}
-//		}
+		for (Number n : list){
+			if (n.doubleValue() > 5) {
+				System.out.println("Greater than 5: " + n);
+			}
+		}
 
-//		Employee employeeA = new Employee();
-//		Employee employeeB = new Employee();
-//		System.out.println(employeeA.getEmployeeID());
-//		System.out.println(employeeB.getEmployeeID());
+		Employee employeeA = new Employee("Donald", "Knuth");
+		Employee employeeB = new Employee("Ada", "Lovelace");
+		System.out.println(employeeA.getEmployeeID());
+		System.out.println(employeeB.getEmployeeID());
 //		employeeA.setEmployeeID(1);
-//		if (employeeA.equals(employeeB)) {
-//			System.out.println("true");
-//		} else  {
-//			System.out.println("false");
-//		}
+		if (employeeA.equals(employeeB)) {
+			System.out.println("true");
+		} else  {
+			System.out.println("false");
+		}
+		Map<Long, Employee> employees = new HashMap<>();
+		employees.put(employeeA.getEmployeeID(), employeeA);
+		employees.put(employeeB.getEmployeeID(), employeeB);
+
 
 		printList(list);
-		Number [] arr = list.toArray(new Number[list.size()]);
+//		Number [] arr = list.toArray(new Number[list.size()]);
 		NumberUtils utils = new NumberUtils();
 		System.out.println(utils.sum(list));
 
@@ -76,7 +81,9 @@ public class NutzungCollections {
 		list2.add(8);
 		list2.add(9);
 		printList(list2); //funktioniert nur bei Verwendung von Wildcard beim printList-Parameter
-
+		System.out.println(list2.get(2)); // wie array[2]
+		list2.set(2, 47);
+		System.out.println(list2.get(2)); // wie array[2] = 47;
 
 		Paar<Number> paar = new Paar<>();
 		paar.a = 123;
@@ -84,11 +91,13 @@ public class NutzungCollections {
 //		paar.a = "hello"; // Compilerfehler
 		Paar<String> strPaar = new Paar<>();
 		strPaar.a = "hello";
+		strPaar.b = "42";
 //		ZweitesZahlenPaar<String> paarString = new ZweitesZahlenPaar<>(); //Compilerfehler
 		ZweitesZahlenPaar<Integer> zweites = new ZweitesZahlenPaar<>();
 		List<Paar<? extends Number>> paare = new ArrayList<>();
 		paare.add(paar);
 		paare.add(zweites);
+//		paare.add(strPaar);
 
 	}
 

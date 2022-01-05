@@ -22,9 +22,12 @@ public class ArrayCopy {
         i[0] = 9;
         System.out.println("i: [" + i[0] + "," + i[1] + "," + i[2] + "]");
         System.out.println("i2: [" + i2[0] + "," + i2[1] + "," + i2[2] + "]");
+//        i2 = i;
+//        System.out.println("i2: [" + i2[0] + "," + i2[1] + "," + i2[2] + "]");
 
-        System.out.println("------------");
+
         //Deep Copy
+        System.out.println("------------");
         i[0] = i2[0];
         i[1] = i2[1];
         i[2] = i2[2];
