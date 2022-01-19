@@ -10,8 +10,11 @@ public class SimpleInvoker {
 	
 	public static void main(String[] args) throws Exception{
 		SimpleServer serverConnection = new SimpleServer();
-		serverConnection.setName("Server");
+		serverConnection.setName("Server0");
 		serverConnection.start();
+//		SimpleServer serverConnection1 = new SimpleServer();
+//		serverConnection1.setName("Server1");
+//		serverConnection1.start();
 
 		Thread.sleep(50);
 		Socket s = new Socket("127.0.0.1", 8082);
@@ -20,7 +23,7 @@ public class SimpleInvoker {
 			int k = (int) (Math.random() * 10 * j);
 			System.out.println(Thread.currentThread().getName() + " : " + k);
 			s.getOutputStream().write(k);
-			Thread.sleep(5);
+			Thread.sleep(500);
 		}
 		s.close();
 		serverConnection.join();

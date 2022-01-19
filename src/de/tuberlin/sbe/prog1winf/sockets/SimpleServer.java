@@ -9,12 +9,16 @@ import java.net.Socket;
  * This is a very simple server class, that just writes inputs to System.out. It stops after 10 inputs.
  */
 public class SimpleServer extends Thread{
+
+	static int portNumer = 8082;
 	
 	public void run() {
-		try (ServerSocket server = new ServerSocket(8082);) {
+		try (ServerSocket server = new ServerSocket(portNumer);) {
+//		try (ServerSocket server = new ServerSocket(portNumer++);) {
 //		ServerSocket server = null;
 //		try {
 //			server = new ServerSocket(8082);
+			System.out.println("Server: " + this.getName() + " -- port: " + server.getLocalPort());
 			Socket client = server.accept();
 
 			int i;

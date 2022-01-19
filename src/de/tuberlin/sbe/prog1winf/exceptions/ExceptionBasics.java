@@ -11,8 +11,10 @@ public class ExceptionBasics {
             if (e instanceof ArithmeticException) {
                 System.out.println("Though oughta not divide by zero");
             }
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
             e.printStackTrace();
+            System.err.println("Do samma");
 //            throw e;
         }
 
@@ -26,7 +28,7 @@ public class ExceptionBasics {
 //        int divisor = 0;
         int res = divident/divisor;
         if (divisor > 0) {
-            throw new MyOwnException("My custom message");
+            throw new MyOwnException("My custom message -- divisor > 0");
         }
         return res;
     }
